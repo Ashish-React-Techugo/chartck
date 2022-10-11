@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/chartck/static/css/main.073c9b0a.css",
+    "main.js": "/chartck/static/js/main.6b08879a.js",
+    "static/js/787.79ab7ce0.chunk.js": "/chartck/static/js/787.79ab7ce0.chunk.js",
+    "index.html": "/chartck/index.html",
+    "main.073c9b0a.css.map": "/chartck/static/css/main.073c9b0a.css.map",
+    "main.6b08879a.js.map": "/chartck/static/js/main.6b08879a.js.map",
+    "787.79ab7ce0.chunk.js.map": "/chartck/static/js/787.79ab7ce0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.6b08879a.js"
+  ]
+}
