@@ -1,49 +1,53 @@
-import React,{Component} from 'react'
+import React,{useState} from 'react'
 import CKEditor from "react-ckeditor-component";
 
-class Example extends Component {
-    constructor(props) {
-        super(props);
-        this.updateContent = this.updateContent.bind(this);
-        this.state = {
-            content: 'content',
-        }
-    }
+function Editor({content,setContent}) {
+    
+    // const [editor,setEditor]=useState(null)
 
-    updateContent(newContent) {
-        this.setState({
-            content: newContent
-        })
+    function updateContent(newContent) {
+        // this.setState({
+        //     content: newContent
+        // })
+      //   editor.model.change( writer => {
+      //     writer.insertText( 'Plain text', editor.model.document.selection.getFirstPosition() );
+      // } );
     }
     
-    onChange(evt){
-      console.log("onChange fired with event info: ", evt);
+    function onChange(evt){
+      // console.log("onChange fired with event info: ", evt);
       var newContent = evt.editor.getData();
-      this.setState({
-        content: newContent
-      })
+      // evt.editor.setData(`<h1>Ashish</h1>`)
+      // console.log(newContent)
+      setContent(newContent)
     }
     
-    onBlur(evt){
-      console.log("onBlur event called with event info: ", evt);
+    function onBlur(evt){
+      // console.log("onBlur event called with event info: ", evt);
     }
     
-    afterPaste(evt){
-      console.log("afterPaste event called with event info: ", evt);
+    function afterPaste(evt){
+      // console.log("afterPaste event called with event info: ", evt);
     }
-
-    render() {
+    function onLoad(evt){
+      console.log(evt,"load")
+    }
+    
         return (
+          <>
             <CKEditor 
               activeClass="p10" 
-              content={this.state.content} 
+              content={content} 
               events={{
-                "blur": this.onBlur,
-                "afterPaste": this.afterPaste,
-                "change": this.onChange
+                "load":onLoad,
+                "blur": onBlur,
+                "afterPaste": afterPaste,
+                "change": onChange
               }}
-             />
+              />
+            
+          </>
+
         )
-    }
 }
-export default Example
+export default Editor
